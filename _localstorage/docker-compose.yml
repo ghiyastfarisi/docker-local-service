@@ -1,0 +1,46 @@
+version: "3"
+services:
+  redis-local: 
+    container_name: redis-local
+    image: redis:alpine
+    volumes: 
+      - ./datadir/redis:/data
+    ports: 
+      - "6379:6379" 
+    restart: always
+    command: ["redis-server", "--appendonly yes"]
+    network_mode: "host"
+  mongodb-local:
+    container_name: mongodb-local
+    image: mongo
+    volumes:
+      - ./datadir/mongo:/data/db
+    ports:
+      - "27017:27017"
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    network_mode: "host"
+  mariadb-local:
+    container_name: mariadb-local
+    image: mariadb:latest
+    volumes: 
+      - ./datadir/mariadb:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    network_mode: "host"
+  postgre-local:
+    container_name: postgre-local
+    image: postgres:alpine
+    volumes:
+      - ./datadir/postgre:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: examplei
+    network_mode: "host"

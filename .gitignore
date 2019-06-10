@@ -1,0 +1,3 @@
+_localstorage/datadir/*
+_localnginx/datadir/*
+_localelasticsearch/esdata/*
