@@ -1,4 +1,4 @@
-# local-docker
+# docker local service
 
 Dockerized local services. 
 List of services:
