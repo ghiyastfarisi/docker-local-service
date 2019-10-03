@@ -4,24 +4,20 @@ services:
     image: nsqio/nsq
     command: /nsqlookupd
     ports:
-      - "4160:4160"
+      - "4160"
       - "4161:4161"
-    network_mode: "host"
   nsqd:
     image: nsqio/nsq
-    command: /nsqd --lookupd-tcp-address=localhost:4160
+    command: /nsqd --broadcast-address=nsqd --lookupd-tcp-address=nsqlookupd:4160
     depends_on:
       - nsqlookupd
     ports:
       - "4150:4150"
       - "4151:4151"
-    network_mode: "host"
   nsqadmin:
     image: nsqio/nsq
-    command: /nsqadmin --lookupd-http-address=localhost:4161
+    command: /nsqadmin --lookupd-http-address=nsqlookupd:4161
     depends_on:
-      - nsqlookupd
+      - nsqlookupd  
     ports:
       - "4171:4171"
-    network_mode: "host"
-
