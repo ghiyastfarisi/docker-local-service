@@ -10,7 +10,8 @@ List of services:
 - MySQL
 - Nginx
 - RabbitMQ
+- NSQ with 
 
 Upcoming services to be added:
 
-- NSQ
+
