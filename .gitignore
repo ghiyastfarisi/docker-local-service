@@ -1,3 +1,3 @@
-_localstorage/datadir/*
-_localnginx/datadir/*
-_localelasticsearch/esdata/*
+database/datadir/*
+nginx/datadir/*
+elasticsearch/esdata/*
