@@ -1,6 +1,6 @@
-# docker local service
+# Docker Local Service
 
-Dockerized local services.
+## Dockerized local services.<br/>
 List of services:
 
 - Elasticsearch
@@ -12,10 +12,10 @@ List of services:
 - RabbitMQ
 - NSQ
 
-Upcoming services to be added:
+## Upcoming services to be added:
 - ELK support (kibana, logstash & filebeat)
 
-Configuration:
+## Configuration:<br/>
 NSQ instance need special configuration because its broadcast address attached to nsqd.
 We should add nsqd as localhost address in hosts
 - for mac or linux located in /etc/hosts
