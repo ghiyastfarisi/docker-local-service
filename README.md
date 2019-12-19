@@ -21,5 +21,5 @@ Docker local service is a repo which contains services wrapped in docker-compose
 We should add nsqd as localhost address in hosts
   - for mac or linux located in /etc/hosts
   - for windows located in c:\windows\system32\drivers\etc\hosts
-* PostgreSQL and MariaDB or MySQL default username is `postgres` and password is `example`
+* PostgreSQL and MariaDB or MySQL default password is `example`
 * MongoDB default user is `root` and password is `example`
