@@ -22,7 +22,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
   mariadb-local:
     container_name: mariadb-local
-    image: mariadb:latest
+    build: ./mariadb-myrocks
     volumes:
       - ./datadir/mariadb:/var/lib/mysql
     ports:
