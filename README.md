@@ -5,16 +5,17 @@ Docker local service is a repo which contains services wrapped in docker-compose
 
 ## List of available services:
 - Elasticsearch
+- Kibana
+- Logstash
 - Cerebro
 - PostgreSQL
 - MongoDB
-- MySQL
+- Mariadb (support myrocks db engine)
 - Nginx
 - RabbitMQ
 - NSQ
 
 ## Upcoming services to be added:
-- ELK support (kibana, logstash & filebeat)
 
 ## Configuration:
 * NSQ instance need special configuration because its broadcast address attached to nsqd.
