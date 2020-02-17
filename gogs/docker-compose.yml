@@ -1,0 +1,11 @@
+version: '3'
+services:
+  gogs-local:
+    container_name: 'gogs-local'
+    image: 'gogs/gogs'
+    restart: always
+    ports:
+      - "10022:22"
+      - "10080:3000"
+    volumes:
+      - ./datadir/var/gogs:/data
