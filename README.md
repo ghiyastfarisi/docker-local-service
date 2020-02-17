@@ -14,6 +14,7 @@ Docker local service is a repo which contains services wrapped in docker-compose
 - Nginx
 - RabbitMQ
 - NSQ
+- Gogs (lightweight git repo like github) visit https://gogs.io/
 
 ## Upcoming services to be added:
 
