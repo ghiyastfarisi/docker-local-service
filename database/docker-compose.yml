@@ -1,7 +1,8 @@
 version: "3"
 services:
-  redis-local:
-    container_name: redis-local
+  redis:
+    container_name: redis
+    network_mode: bridge
     image: redis:alpine
     volumes:
       - ./datadir/redis:/data
@@ -9,8 +10,9 @@ services:
       - "6379:6379"
     restart: always
     command: ["redis-server", "--appendonly yes"]
-  mongodb-local:
-    container_name: mongodb-local
+  mongodb:
+    container_name: mongodb
+    network_mode: bridge
     image: mongo
     volumes:
       - ./datadir/mongo:/data/db
@@ -20,8 +22,9 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
-  mariadb-local:
-    container_name: mariadb-local
+  mariadb:
+    container_name: mariadb
+    network_mode: bridge
     build: ./mariadb-myrocks
     volumes:
       - ./datadir/mariadb:/var/lib/mysql
@@ -30,8 +33,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
-  postgre-local:
-    container_name: postgre-local
+  postgre:
+    container_name: postgre
+    network_mode: bridge
     image: postgres:alpine
     volumes:
       - ./datadir/postgre:/var/lib/postgresql/data
