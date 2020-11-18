@@ -1,7 +1,8 @@
 version: "3"
 services:
-  rabbitmq-local:
-    container_name: rabbitmq-local
+  rabbitmq:
+    container_name: rabbitmq
+    network_mode: bridge
     image: rabbitmq:management-alpine
     ports:
       - "5672:5672"

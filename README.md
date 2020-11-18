@@ -14,7 +14,6 @@ Docker local service is a repo which contains services wrapped in docker-compose
 - Nginx
 - RabbitMQ
 - NSQ
-- Gogs (lightweight git repo like github) visit https://gogs.io/
 
 ## Upcoming services to be added:
 
@@ -25,3 +24,7 @@ We should add nsqd as localhost address in hosts
   - for windows located in c:\windows\system32\drivers\etc\hosts
 * PostgreSQL and MariaDB or MySQL default password is `example`
 * MongoDB default user is `root` and password is `example`
+
+## Tips
+
+It is better to use Vagrant and use Linux OS if we use MacOS or Windows as main Operating System for ease and better experience, because Docker network will working better in Linux environment.
