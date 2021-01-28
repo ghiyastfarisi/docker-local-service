@@ -44,3 +44,14 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: example
+  mysql:
+    container_name: mysql
+    network_mode: bridge
+    image: mysql:5.7
+    volumes:
+      - ./datadir/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
