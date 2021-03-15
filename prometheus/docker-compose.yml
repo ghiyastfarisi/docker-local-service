@@ -1,0 +1,35 @@
+version: "3"
+services: 
+  prometheus:
+    container_name: prometheus 
+    image: prom/prometheus 
+    network_mode: host
+    depends_on:
+      - pushgateway
+    expose:
+      - 9090  
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./datadir/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./datadir/prometheus/data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention=1h'
+      - '--web.enable-lifecycle'
+  pushgateway:
+    container_name: pushgateway
+    image: prom/pushgateway
+    network_mode: host
+    expose:
+      - 9091
+    ports:
+      - "9091:9091"
+    volumes:
+      - ./datadir/pushgateway:/data
+    command:
+      - --persistence.file=/data/pushgateway.data
+      - --persistence.interval=1h

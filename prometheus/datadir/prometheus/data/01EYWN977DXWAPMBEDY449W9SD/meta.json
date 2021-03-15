@@ -1,0 +1,17 @@
+{
+	"ulid": "01EYWN977DXWAPMBEDY449W9SD",
+	"minTime": 1613442983158,
+	"maxTime": 1613448000000,
+	"stats": {
+		"numSamples": 154781,
+		"numSeries": 758,
+		"numChunks": 1630
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01EYWN977DXWAPMBEDY449W9SD"
+		]
+	},
+	"version": 1
+}

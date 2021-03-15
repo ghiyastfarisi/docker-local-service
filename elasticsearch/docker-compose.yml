@@ -2,38 +2,13 @@ version: "3"
 services:
   elasticsearch:
     container_name: elasticsearch
-    network_mode: bridge
-    image: elasticsearch:7.5.1
+    network_mode: host
+    image: elasticsearch:7.8.1
     environment:
       - "discovery.type=single-node"
-      - "cluster.name=local-docker-cluster"
       - "bootstrap.memory_lock=true"
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     volumes:
-      - esdata:/usr/share/elasticsearch/data
+      - ./datadir/elasticsearch:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
-    restart: always
-  kibana:
-    container_name: kibana
-    network_mode: bridge
-    image: kibana:7.5.1
-    ports:
-      - "5601:5601"
-    environment:
-      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
-    depends_on:
-      - elasticsearch
-  logstash:
-    container_name: logstash
-    network_mode: bridge
-    image: logstash:7.5.1
-    ports:
-      - "5601:5601"
-    environment:
-      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
-    depends_on:
-      - elasticsearch
-volumes:
-  esdata:
-    driver: local

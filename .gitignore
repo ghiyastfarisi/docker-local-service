@@ -1,4 +1,4 @@
 database/datadir/*
 nginx/datadir/*
-elasticsearch/esdata/*
+elasticsearch/datadir/*
 gogs/datadir/*

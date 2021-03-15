@@ -1,0 +1,16 @@
+version: "3"
+services: 
+  elastichq:
+    container_name: elasticsearch-hq
+    network_mode: host
+    image: elastichq/elasticsearch-hq
+    ports:
+      - "5000:5000" 
+  cerebro:
+    container_name: cerebro 
+    network_mode: host
+    image: lmenezes/cerebro
+    ports:
+      - "9092:9092"
+    environment:
+      CEREBRO_PORT: 9092 
