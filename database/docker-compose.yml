@@ -44,6 +44,17 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: example
+  postgis:
+    container_name: postgis
+    network_mode: bridge
+    image: postgis/postgis:15-3.3-alpine
+    volumes:
+      - ./datadir/postgis:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
   mysql:
     container_name: mysql
     network_mode: bridge

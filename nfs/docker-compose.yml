@@ -1,0 +1,12 @@
+version: "3"
+services:
+  nfs:
+    container_name: nfs
+    image: gcr.io/google_containers/volume-nfs:0.8
+    network_mode: host
+    volumes:
+      - ./datadir:/data
+    ports:
+      - '2049:2049'
+      - '20048:20048'
+      - '111:111'
